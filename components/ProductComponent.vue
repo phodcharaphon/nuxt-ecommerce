@@ -4,8 +4,9 @@
         <NuxtLink :to="`/item/${product.id}`">
             <img class="rounded-t" :src="product.url" />
             <div id="ProductDetails">
+                <p class="px-1 pt-0.5 text-xl text-[#252525] pt-1">{{ product.title.substring(0, 60) }}</p>
                 <span class="flex items-center justify-center gap-3 px-2 pt-1">
-                    <span class="text-[#1e1b4b] font-semibold">{{ priceComputed }} บาท</span>
+                    <span class="text-[#1e1b4b] font-semibold">ราคา {{ priceComputed }} บาท</span>
                     <!-- <span class="text-gray-500 text-sm text-light line-through">{{ oldPirceComputed }} บาท</span> -->
                 </span>
 
@@ -15,7 +16,7 @@
                     <!-- <span class="bg-[#FD374F] text-white text-[9px] font-semibold px-1.5 rounded-ms">Test</span>
                     <span class="bg-[#F5F5F5] border text-[#C08562] text-[9px] font-sembold px-1.5 rounded-sm">test2</span> -->
                 </div>
-                <!-- <p class="px-1 pt-0.5 text-xs text-[#252525]">{{ product.title.substring(0, 60) }}</p> -->
+               
                 
                 <p class="px-1 pb-1">
                     <span class="text-[#009A66] text-xs font-semibold">Free Shopping</span>
@@ -33,8 +34,8 @@ const priceComputed = computed(() => {
     return product.value.price
 })
 
-const oldPirceComputed = computed(() => {
-    let res = (product.value.price + (product.value.price))
-    return res.toFixed(2)
-})
+// const oldPirceComputed = computed(() => {
+//     let res = (product.value.price + (product.value.price))
+//     return res.toFixed(2)
+// })
 </script>
